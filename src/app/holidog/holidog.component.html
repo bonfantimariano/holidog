@@ -1,0 +1,20 @@
+<section class="container">
+    <div style="text-align: center;">
+        <h2>Holidog-Catalog</h2>
+    </div>
+    <div class="card" style="width: 50%; margin:auto; border:none">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Options</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect" (change)="onChange($event.target.value)" ng-model="ak.action">
+                <option selected>Choose...</option>
+                <option [value]="breed" *ngFor="let breed of breeds">{{breed}}</option>
+            </select>
+        </div>
+        <img class="card-img-top" [src]="image" alt="Card image cap">
+        <div class="card-body" style="text-align: center;">
+            <button type="button" [disabled]="!breedSelected" (click)="onClick()" class="btn btn-outline-primary">Change</button>
+        </div>
+    </div>
+</section>
